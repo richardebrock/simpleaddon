@@ -1,0 +1,29 @@
+{
+
+  "description": "Simple add-on to demonstrate blob:url bug",
+  "manifest_version": 2,
+  "name": "SimpleAddon",
+  "version": "1.0",
+  "homepage_url": "https://example.com",
+  "icons": {
+    "48": "icons/icon-48.png"
+  },
+
+  "background": {
+    "scripts": ["background.js"]
+  },
+  "content_scripts": [
+    {
+      "js": ["content.js"],
+      "matches": ["<all_urls>"]
+    }
+  ],
+  "permissions": [
+    "http://*/*",
+    "https://*/*",
+    "tabs",
+    "webNavigation",
+    "downloads", 
+    "downloads.open"
+  ]
+}
